@@ -1,5 +1,5 @@
 # timonel-mss-esp8266
-### Timonel I2C master single slave test for ESP8266
+## Timonel I2C master single slave test for ESP8266
 
 This ESP8266/Arduino test application [shows](http://youtu.be/-7GOMToGvzI) the usage of TWI master libraries.
 
@@ -10,4 +10,4 @@ It is a serial console-based application that allows sending commands to a devic
 * Deletes the application from the AVR device memory.
 * Optionally, it makes an on-screen dump of all the device's memory for debugging.
 
-The application has been tested on ESP-01 and NodeMCU modules. It is compiled and flashed to the device using [PlatformIO](http://platformio.org) over [VS Code](http://code.visualstudio.com). The [arduino](/arduino) folder contains the same application, adapted to be used through the Arduino IDE.
+The application has been tested on ESP-01 and NodeMCU modules. It is compiled and flashed to the device using [PlatformIO](http://platformio.org) over [VS Code](http://code.visualstudio.com). The [arduino](/arduino/Timonel-MSS-ESP8266) folder contains the same application, adapted to be used through the Arduino IDE.
