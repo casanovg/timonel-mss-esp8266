@@ -370,7 +370,7 @@ uint8_t DiscoverDevice(bool *p_app_mode, const uint8_t sda, const uint8_t scl) {
             start_time = now;
         }
     }
-    USE_SERIAL.printf_P("\b\b* ");
+    USE_SERIAL.printf_P("\b\b* TWI address found: %d", slave_address);
     USE_SERIAL.printf_P("\n\r");
     return slave_address;
 }
