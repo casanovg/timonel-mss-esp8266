@@ -95,7 +95,7 @@ void loop() {
                     if (ret) {
                         USE_SERIAL.printf_P(" > Error: %d\n\n\r", ret);
                     } else {
-                        USE_SERIAL.printf_P(" > OK Resetting ATtiny85 -> going back to bootloader!\n\r");
+                        USE_SERIAL.printf_P(" > OK Resetting Tiny85, going back to bootloader!\n\r");
                     }
                     delay(MODE_SWITCH_DLY);
                     // ESP.restart();
@@ -370,7 +370,7 @@ uint8_t DiscoverDevice(bool *p_app_mode, const uint8_t sda, const uint8_t scl) {
             start_time = now;
         }
     }
-    USE_SERIAL.printf_P("\b\b* TWI address found: %d", slave_address);
+    USE_SERIAL.printf_P("\b\b>>> device active at address [%d]", slave_address);
     USE_SERIAL.printf_P("\n\r");
     return slave_address;
 }
