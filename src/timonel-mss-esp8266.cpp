@@ -1,7 +1,7 @@
 /*
   Timonel bootloader I2C-master single slave application demo for ESP8266
   ............................................................................
-  File: timonel-mss.esp8266.cpp (Application)
+  File: timonel-mss-esp8266.cpp (Application)
   ............................................................................
   This demo implements an I2C serial commander to control interactively a
   Tiny85 microcontroller running the Timonel bootloader from an ESP8266
