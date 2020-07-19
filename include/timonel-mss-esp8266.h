@@ -11,8 +11,8 @@
   ............................................................................
 */
 
-#ifndef TIMONEL_TWIM_SS_H
-#define TIMONEL_TWIM_SS_H
+#ifndef TIMONEL_MSS_ESP8266_H
+#define TIMONEL_MSS_ESP8266_H
 
 #include <NbMicro.h>
 #include <TimonelTwiM.h>
@@ -52,4 +52,4 @@ void PrintLogo(void);
 void RotaryDelay(void);
 void RotatingBar(uint8_t *rotary_state);
 
-#endif  // TIMONEL_TWIM_SS_H
+#endif  // TIMONEL_MSS_ESP8266_H
