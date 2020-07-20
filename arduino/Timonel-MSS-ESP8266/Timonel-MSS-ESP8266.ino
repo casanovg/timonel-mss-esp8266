@@ -49,7 +49,11 @@ Timonel *p_timonel = nullptr;     // Pointer to a bootloader objetct
 // Timonel object. Since it inherits from NbMicro, so the "TwiCmdXmit" method is available.
 void (*resetFunc)(void) = 0;
 
-// Setup block
+/* ___________________
+  |                   | 
+  |    Setup block    |
+  |___________________|
+*/
 void setup() {
     bool app_mode = false;         // This holds the slave device running mode info: bootloader or application
     p_app_mode = &app_mode;        // This is to take different actions depending on whether the bootloader or the application is active
@@ -75,7 +79,11 @@ void setup() {
     ShowMenu(*p_app_mode);
 }
 
-// Main loop
+/* _________________
+  |                 | 
+  |    Main loop    |
+  |_________________|
+*/
 void loop() {
     if (new_key == true) {
         new_key = false;
