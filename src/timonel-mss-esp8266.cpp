@@ -7,7 +7,7 @@
   Tiny85 microcontroller running the Timonel bootloader from an ESP8266
   master. It uses a serial console configured at 115200 N 8 1 for feedback.
   ............................................................................
-  Version: 1.5.0 / 2020-07-13 / gustavo.casanova@nicebots.com
+  Version: 1.5.1 / 2020-09-25 / gustavo.casanova@nicebots.com
   ............................................................................
 */
 
@@ -89,6 +89,28 @@ void loop() {
                         USE_SERIAL.printf_P(" > Error: %d\n\n\r", ret);
                     } else {
                         USE_SERIAL.printf_P(" > OK!\n\n\r");
+                    }
+                    break;
+                }
+                // *********************************
+                // * Test app ||| INFORMAT Command *
+                // *********************************
+                case 'i':
+                case 'I': {
+                    byte ret_len = 1 + 6;  // "Hello!" reply: 1 ack byte + 6 data bytes
+                    char info_ret[ret_len];
+                    byte ret = p_timonel->TwiCmdXmit(INFORMAT, ACKINFOR, (byte *)info_ret, ret_len);
+                    if (ret) {
+                        USE_SERIAL.print(" > Error: ");
+                        USE_SERIAL.println(ret);
+
+                    } else {
+                        USE_SERIAL.println(" > OK: ACKINFOR");
+                        USE_SERIAL.println("");
+                        for (byte i = 1; i < ret_len; i++) {
+                            USE_SERIAL.print(info_ret[i]);
+                        }
+                        USE_SERIAL.println("\n\r");
                     }
                     break;
                 }
@@ -465,7 +487,7 @@ void ShowHeader(const bool app_mode) {
 // Function ShowMenu
 void ShowMenu(const bool app_mode) {
     if (app_mode) {
-        USE_SERIAL.printf_P("Application command ('z' reset tiny, 'a' blink, 's' stop, '?' help): \x1b[5m_\x1b[0m");
+        USE_SERIAL.printf_P("Application command ('z' reset tiny, 'a' blink, 's' stop, 'i' info, '?' help): \x1b[5m_\x1b[0m");
     } else {
         Timonel::Status sts = p_timonel->GetStatus();
         USE_SERIAL.printf_P("Timonel bootloader ('z' reset master, 'v' version, 'r' run app, 'e' erase flash, 'w' write flash");
