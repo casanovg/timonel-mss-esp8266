@@ -7,7 +7,7 @@
   Tiny85 microcontroller running the Timonel bootloader from an ESP8266
   master. It uses a serial console configured at 115200 N 8 1 for feedback.
   ............................................................................
-  Version: 1.5.1 / 2020-09-25 / gustavo.casanova@nicebots.com
+  Version: 1.6.0 / 2021-06-13 / gustavo.casanova@nicebots.com
   ............................................................................
 */
 
