@@ -1,7 +1,7 @@
 /*
  * Full Memory Test Application Payload
  * ====================================
- * 2021-06-29 Gustavo Casanova
+ * 2018-10-29 Gustavo Casanova
  * ...............................................
  * This payload consists of SOS blinker (19 pages)
  * plus dummy data (88 pages). The purpose is to
