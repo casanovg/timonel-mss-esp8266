@@ -288,7 +288,7 @@ void loop() {
                     // (uint16_t) flash_size: MCU flash memory size
                     // (uint8_t) slave_data_size: slave-to-master Xmit packet size
                     // (uint8_t) values_per_line: MCU memory values shown per line
-                    p_timonel->DumpMemory(MCU_TOTAL_MEM, SLV_PACKET_SIZE, 32);
+                    p_timonel->DumpMemory(MCU_TOTAL_MEM, SLV_PACKET_SIZE, VALUES_PER_LINE);
                     break;
                 }
 #if ((defined EXT_FEATURES) && ((EXT_FEATURES >> E_EEPROM_ACCESS) & true))
